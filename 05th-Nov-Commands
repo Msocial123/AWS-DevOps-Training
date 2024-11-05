@@ -1,0 +1,17 @@
+Web Server Installation on Amazon Linux :
+
+sudo su
+yum install httpd -y 
+service httpd start 
+yum install git -y
+git clone GitHub URl
+cp -r . /var/www/html
+
+Web Server Installation on Ubuntu:
+
+sudo su
+apt-get update -y
+apt-get install apache2 -y
+service apache2 start
+git clone gitHub URL 
+cp -r . /var/www/html
