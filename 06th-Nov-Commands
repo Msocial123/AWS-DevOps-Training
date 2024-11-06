@@ -1,0 +1,54 @@
+ 1  yum update -y
+    2  yum install docker -y
+    3  docker --version
+    4  service docker status
+    5  service docker start
+    6  service docker status
+    7  clear
+    8  docker create ubuntu /bin/bash
+    9  docker images
+   10  docker ps
+   11  docker ps -a
+   12  docker start b42e2f60af1d
+   13  docker ps -a
+   14  docker create -it --name example amazonlinux /bin/bash
+   15  docker ps
+   16  docker ps -a
+   17  docker attach example
+   18  docker start example
+   19  docker ps -a
+   20  docker attach example
+   21  docker ps -a
+   22  docker start example
+   23  docker attach example
+   24  docker ps
+   25  docker ps -a
+   26  docker exec -it b42e2f60af1d /bin/bash
+   27  clear
+   28  docker run -it --name webserver -p 81:80 nginx
+   29  clear
+   30  docker run -it --name sample ubuntu /bin/bash
+   31  docker run -td --name sonarqube -p 9000:9000 sonarqube:latest
+   32  docker os
+   33  docker pps
+   34  docker ps
+   35  docker rm sonarqube
+   36  docker ps -a
+   37  history
+____________________________________________________
+ 6  docker run -td --name web-app -p 82:80 muralisocial123/citi-web-image:latest
+    7  docker ps
+    8  docker port web-app
+    9  docker exec -it web-app /bin/bash
+   10  docker ps
+   11  docker start
+   12  docker ps
+   13  docker run -it --name webserver ubuntu /bin/bash
+   14  docker ps -a
+   15  docker stop webserver
+   16  docker ps -a
+   17  docker rm webserver
+   18  docker ps -a
+   19  docker rm -f web-app
+   20  docker ps -a
+   21  docker ps
