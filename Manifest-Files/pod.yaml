@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod 
 metadata:
   name: digibank-pod 
-  Namespace: test-ns
+  namespace: test-ns
 spec:
   containers:
     - name: test-cont 
