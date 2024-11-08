@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: trans-app-deployment 
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web 
+  template:
+    metadata:
+      labels:
+        app: web 
+    spec:
+      containers:
+        - image: muralisocial123/aws-trans-image:latest
+          name: trans-app 
+          ports:
+              - containerPort: 80    
