@@ -1,0 +1,152 @@
+    1  clear
+    2  apt-get update -y
+    3  clear
+    4  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.4/2024-09-11/bin/linux/amd64/kubectl
+    5  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.4/2024-09-11/bin/linux/amd64/kubectl.sha256
+    6  sha256sum -c kubectl.sha256
+    7  chmod +x ./kubectl
+    8  mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+    9  kubectl version --client
+   10  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"t
+   11  unzip awscliv2.zip
+   12  apt-get install unzip -y
+   13  unzip awscliv2.zip
+   14  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"t
+   15  unzip awscliv2.zip
+   16  clear
+   17  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   18  unzip awscliv2.zip
+   19  sudo ./aws/install
+   20  aws --version
+   21  clear
+   22  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   23  sudo mv /tmp/eksctl /usr/local/bin
+   24  eksctl version
+   25  clear
+   26  aws configure
+   27  clear
+   28  eksctl create cluster --name test-cluster --version 1.30 --region ap-southeast-1 --nodegroup-name test-linux --node-type t2.medium --nodes 2
+   29  clear
+   30  aws eks update-kubeconfig --name test-cluster --region ap-southeast-1
+   31  clear
+   32  kubectl get nodes
+   33  kubectl get pods
+   34  kubectl get deployments
+   35  kubectl get rs
+   36  clear
+   37  kubectl get ns
+   38  kubectl create nameapsce test-ns
+   39  kubectl create namespace test-ns
+   40  kubectl get ns
+   41  clear
+   42  kubectl explain ns
+   43  clear
+   44  git clone https://github.com/Msocial123/AWS-DevOps-Training.git
+   45  clear
+   46  ls
+   47  cd AWS-DevOps-Training
+   48  ls
+   49  cd Manifest-Files
+   50  clear
+   51  ls
+   52  kubectl apply -f ns.yaml
+   53  git pull
+   54  ls
+   55  kubectl apply -f pod.yaml
+   56  clear
+   57  kubectl get nodes
+   58  kubectl get pods
+   59  kubectl get pods -o wide
+   60  kubectl describe pod digibank-pod
+   61  kubectl get events
+   62  clear
+   63  git pull
+   64  kubectl apply -f pod.yaml
+   65  git pull
+   66  kubectl apply -f pod.yaml
+   67  kubectl get pod -n test-ns
+   68  kubectl get pods
+   69  kubectl get pods -o wide
+   70  kubectl get pods -o wide -n test-ns
+   71  clear
+   72  aws eks update-kubeconfig –-name test-cluster –region ap-southeast-1
+   73  aws eks update-kubeconfig --name test-cluster --region ap-southeast-1
+   74  clear
+   75  kubectl get nodes
+   76  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.4/2024-09-11/bin/linux/amd64/kubectl
+   77  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.4/2024-09-11/bin/linux/amd64/kubectl.sha256
+   78  sha256sum -c kubectl.sha256
+   79  chmod +x ./kubectl
+   80  mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+   81  kubectl version --client
+   82  kubectl get nodes
+   83  clear
+   84  kubectl get pods
+   85  kubectl get pods -n test-ns
+   86  kubectl delete pod digibank-pod
+   87  kubectl get pods
+   88  ls
+   89  cd AWS-DevOps-Training
+   90  ls
+   91  cd Manifest-Files
+   92  clear
+   93  ls
+   94  git pull
+   95  kubectl apply -f rs.yaml
+   96  git pull
+   97  kubectl apply -f rs.yaml
+   98  git pull
+   99  kubectl apply -f rs.yaml
+  100  clear
+  101  kubectl get rs
+  102  kubectl get pods
+  103  kubectl delete pod trans-app-rs-92hbc
+  104  kubectl get pods
+  105  kubectl describe pod trans-app-rs-jnknc
+  106  kubectl get events --sort-by=.metadata.creationTimestamp
+  107  kubectl get rs
+  108  git pull
+  109  kubectl apply -f deployment.yaml
+  110  kubectl get pods
+  111  kubectl get rs
+  112  kubectl describe deployment trans-app-deployment
+  113  clear
+  114  kubectl get rs
+  115  kubectl scale deployment trans-app-deployment --replicas 5
+  116  kubectl get pods
+  117  clear
+  118  kubectl get deployments -o wide
+  119  kubectl get pods -o wide
+  120  kubectl get rs
+  121  kubectl delete rs trans-app-rs
+  122  kubectl get pods -o wide
+  123  kubectl get pods
+  124  kubectl scale deployment trans-app-deployment --replicas 3
+  125  kubectl get pods
+  126  kubectl get pids -o wide
+  127  kubectl get pods -o wide
+  128  kubectl set image deployment/trans-app-deployment trans-app=muralisocial123/fashion-app-image:latest
+  129  kubectl get pods -o wide
+  130  kubectl get deployments
+  131  kubectl describe deployment trans-app-deployment
+  132  clear
+  133  kubectl get deployments
+  134  kubectl rollout status deployment/trans-app-deployment
+  135  kubectl rollout history deployment/trans-app-deployment
+  136  kubectl rollout history deployment/trans-app-deployment --revision=1
+  137  kubectl rollout history deployment/trans-app-deployment --revision=2
+  138  clear
+  139  kubectl get deployments
+  140  kubectl rollout undo deployment/trans-app-deployment
+  141  kubectl get pods -o wide
+  142  kubectl describe deployment trans-app-deployment
+  143  clear
+  144  ls
+  145  kubectl apply -f deployment.yaml
+  146  git pull
+  147  kubectl apply -f deployment.yaml
+  148  kubectl describe deployment trans-app-deployment
+  149  clear
+  150  kubectl rollout undo deployment/trans-app-deployment
+  151  kubectl rollout history deployment/trans-app-deployment
+  152  kubectl rollout history deployment/trans-app-deployment --revision=5
