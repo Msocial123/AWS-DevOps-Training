@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: ReplicaSet 
+metadata:
+  name: trans-app-rs 
+spec:
+  relicas: 4
+  selector:
+    matchlabels:
+      app: trans
+  template:
+    metadata:
+      labels:
+        app: trans 
+      spec: 
+        containers:
+          - name: app-web
+            image: muralisocial123/aws-trans-image:latest
+            ports:
+              - containerPort: 4545
+              
+
+
