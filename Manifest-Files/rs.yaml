@@ -5,7 +5,7 @@ metadata:
 spec:
   relicas: 4
   selector:
-    matchlabels:
+    matchLabels:
       app: trans
   template:
     metadata:
@@ -17,6 +17,6 @@ spec:
             image: muralisocial123/aws-trans-image:latest
             ports:
               - containerPort: 4545
-              
+
 
 
