@@ -16,4 +16,4 @@ spec:
         - image: muralisocial123/aws-trans-image:latest
           name: trans-app 
           ports:
-              - containerPort: 80    
+              - containerPort: 4545    
