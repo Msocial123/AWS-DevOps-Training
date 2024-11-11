@@ -27,3 +27,6 @@ sudo ./aws/install
    26  aws eks update-kubeconfig –-name test-cluster –region ap-southeast-1
    27  aws eks update-kubeconfig --name test-cluster --region ap-southeast-1
    28  history
+
+
+   aws eks update-kubeconfig –-name test-cluster –region ap-southeast-1
