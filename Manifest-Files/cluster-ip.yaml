@@ -10,15 +10,16 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx 
-    containers:
-      - name: nginx-app
-        image: nginx:latest 
-        ports: 
-          - containerPort: 80
-        env: 
-          - name: TITLE
-            value: "NGINX APP1"  
+        app: nginx
+    spec:     
+      containers:
+        - name: nginx-app
+          image: nginx:latest 
+          ports: 
+            - containerPort: 80
+          env: 
+            - name: TITLE
+              value: "NGINX APP1"  
 --- 
   apiVersion: v1 
   kind: Service
