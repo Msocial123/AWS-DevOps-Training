@@ -21,7 +21,7 @@ environment{
       }
     }
 
-    stage('Docker build'){
+    /*stage('Docker build'){
             steps{
                 script{                  
                         sh """
@@ -45,7 +45,7 @@ environment{
             }
         }
         
-    stage('Image push to Docker Hub'){
+    #stage('Image push to Docker Hub'){
             steps{
                 script{
                         withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDENTIALS}", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
@@ -59,14 +59,14 @@ environment{
                 }
                 }
             }
-        }
+        }*/
     stage('Deployment'){
             steps{
                 script{
                     withAWS(credentials: 'aws-cred', region: "${REGION}") {
                         sh """
                         aws eks update-kubeconfig --region ${REGION} --name test-cluster
-                        kubectl apply -f autpscaling.yaml
+                        kubectl apply -f autoscaling.yaml
                         """
                     }
                 }
