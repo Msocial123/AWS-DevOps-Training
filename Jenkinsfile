@@ -21,7 +21,7 @@ environment{
       }
     }
 
-    /*stage('Docker build'){
+    stage('Docker build'){
             steps{
                 script{                  
                         sh """
@@ -59,7 +59,7 @@ environment{
                 }
                 }
             }
-        }*/
+        }
     stage('Deployment'){
             steps{
                 script{
