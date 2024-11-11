@@ -29,6 +29,6 @@ spec:
         path: "/(.*)"
         backend:
           service:
-            name: nginx-svc
+            name: transaction-deployment-svc
             port: 
-              number: 80               
+              number: 4545             
