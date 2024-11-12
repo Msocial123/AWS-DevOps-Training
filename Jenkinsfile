@@ -52,8 +52,8 @@ environment{
                     
                         sh """
                         docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-                        docker tag web-app:${VERSION}  muralisocial123/web-app:${VERSION}
-                        docker push muralisocial123/web-app:${VERSION}
+                        docker tag project:${VERSION}  muralisocial123/project:${VERSION}
+                        docker push muralisocial123/project:${VERSION}
                         """
                     
                 }
