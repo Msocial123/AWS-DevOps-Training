@@ -37,7 +37,7 @@ environment{
                     withAWS(credentials: 'aws-cred', region: "${REGION}") {
                         sh """
                             aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
-                        docker tag web-app:${VERSION} ${REPO_URI}:${VERSION}
+                        docker tag project:${VERSION} ${REPO_URI}:${VERSION}
                         docker push ${REPO_URI}:${VERSION}
                         """
                     }
@@ -45,7 +45,7 @@ environment{
             }
         }
         
-    #stage('Image push to Docker Hub'){
+    stage('Image push to Docker Hub'){
             steps{
                 script{
                         withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDENTIALS}", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
