@@ -25,7 +25,7 @@ environment{
             steps{
                 script{                  
                         sh """
-                         docker build -t web-app:${VERSION} .
+                         docker build -t project:${VERSION} .
                         """
                 }
             }
